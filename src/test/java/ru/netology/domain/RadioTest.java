@@ -8,7 +8,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetAmountRadioStation() {
-        Radio radio = new Radio(40, 39);
+        Radio radio = new Radio(40);
 
         assertEquals(40, radio.getAmountRadioStations());
     }
@@ -22,7 +22,8 @@ public class RadioTest {
 
     @Test
     public void amountRadioStationOverLimit() {
-        Radio radio = new Radio(50, 49, 49);
+        Radio radio = new Radio();
+        radio.setCurrentRadioStation(9);
 
         radio.nextRadioStation();
 
@@ -40,7 +41,8 @@ public class RadioTest {
 
     @Test
     public void volumeOverLimit() {
-        Radio radio = new Radio(100);
+        Radio radio = new Radio();
+        radio.setCurrentVolume(100);
 
         radio.increaseVolume();
 
@@ -49,7 +51,7 @@ public class RadioTest {
 
     @Test
     public void volumeUnderLimit() {
-        Radio radio = new Radio(0);
+        Radio radio = new Radio();
 
         radio.reduceVolume();
 
