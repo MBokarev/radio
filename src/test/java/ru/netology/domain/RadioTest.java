@@ -57,4 +57,14 @@ public class RadioTest {
 
         assertEquals(0, radio.getCurrentVolume());
     }
+
+    @Test
+    public void changeAmountRadioStations() {
+        Radio radio = new Radio(20);
+        radio.setCurrentRadioStation(14);
+
+        radio.nextRadioStation();
+
+        assertEquals(15, radio.getCurrentRadioStation());
+    }
 }
